@@ -1,0 +1,20 @@
+name: "Git Proxy"
+version: "0.1.0"
+slug: git-proxy
+description: "Read-only proxy that lets the Supervisor pull private GitHub add-on repositories without a token in the URL"
+url: https://github.com/ngxson/ha-git-proxy
+startup: system
+boot: auto
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armv7
+# No `ports:` on purpose: reachable only on the internal hassio network.
+options:
+  github_token: ""
+  allowed_repos: []
+schema:
+  github_token: password
+  allowed_repos:
+    - "match(^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$)"

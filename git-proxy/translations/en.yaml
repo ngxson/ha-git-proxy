@@ -1,0 +1,7 @@
+configuration:
+  github_token:
+    name: GitHub token
+    description: Fine-grained PAT with read-only "Contents" access to the allowed repositories.
+  allowed_repos:
+    name: Allowed repositories
+    description: "owner/name of each repository the proxy may serve. Anything else gets 403."
